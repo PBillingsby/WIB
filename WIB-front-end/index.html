@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="scripts/user_script.js"></script>
+  <script src="scripts/destination_script.js"></script>
+  <title>Where I've Been</title>
+</head>
+<body>
+  <header class="navbar navbar-light">
+    <span id="logo d-inline-block">
+      <img src="images/output-onlinepngtools (4).png" alt="" class="logo-img">
+      <h5 class="pt-3">Where I've Been</h5>
+    </span>
+    <div id="user-form">
+      <span id="user-handle" class="text-right">
+        <form id="user-auth">
+          <button type="button" class="btn btn-outline-light" onclick="userAuth()">Log In</button>
+          <button type="button" class="btn btn-outline-light" onclick="userAuth()">Sign Up</button>
+        </form>
+      </span>      
+    </div> 
+  </header>
+  <div class="container">
+    <div id="destinations" class="mx-auto text-center">
+      <button type="button" id="destinationButton" class="mx-auto btn btn-outline-dark" onclick="addDestination()">Add Where I've Been</button>
+      <form id="destination-form" onsubmit="handleNewDestination()">
+        <div class="form-group">
+          <input type="text" placeholder="Address" id="address">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="City" id="city">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Country" id="country">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Occasion" id="occasion">
+        </div>
+        <div class="form-group">
+          <label>Trip Date</label>
+          <input type="date" placeholder="Trip date" id="date">
+          <input type="number" placeholder="Days on trip" id="time-stayed">
+        </div>
+        <input type="submit" value="Add Trip">
+      </form>
+    </div>
+    <div id="links" class="text-center">
+      <button class="btn btn-outline-dark" onclick="destinationsFetch()">Destinations</button>
+      <button class="btn btn-outline-dark" onclick="tripsFetch()">Trips</button>
+    </div>
+    <div id="my-destinations" class="text-center"></div>
+  </div>
+</body>
+</html>
